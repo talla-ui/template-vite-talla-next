@@ -12,7 +12,7 @@ const view = ui.cell(
 
 export class MainActivity extends Activity {
   createView() {
-    return new view();
+    return view.create();
   }
 
   count = 0;

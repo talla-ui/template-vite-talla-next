@@ -1,4 +1,4 @@
-import { $activity, Activity, ui } from "talla-ui";
+import { $activity, Activity, app, ui } from "talla-ui";
 
 const view = ui.cell(
   ui.label($activity.bind("count"), { fontSize: 40, tabularNums: true }),
@@ -19,4 +19,10 @@ export class MainActivity extends Activity {
   onCountUp() {
     this.count++;
   }
+}
+
+// hot reload for vite:
+if (import.meta.hot) {
+  import.meta.hot.accept();
+  app.hotReload(import.meta, MainActivity);
 }
